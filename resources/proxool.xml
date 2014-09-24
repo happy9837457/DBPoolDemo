@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<something-else-entirely>
+	<proxool>
+		<!-- 数据库名称 -->
+		<alias>lottery</alias>
+		<!-- 数据库驱动 -->
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<!-- 数据库连接URL -->
+		<driver-url>jdbc:mysql://127.0.0.1:3306/information_schema</driver-url>
+		<!-- 数据库用户名和密码 -->
+		<driver-properties>
+			<property name="user" value="root" />
+			<property name="password" value="root" />
+		</driver-properties>
+		<!-- 检查线程休眠时间 -->
+		<house-keeping-sleep-time>60000</house-keeping-sleep-time>
+		<!-- 活动线程最大活动时间 -->
+		<maximum-active-time>10000</maximum-active-time>
+		<!-- 数据库最大连接数 -->
+		<maximum-connection-count>5</maximum-connection-count>
+		<!-- 数据库最小连接数 -->
+		<minimum-connection-count>2</minimum-connection-count>
+		<!-- 等待队列长度 -->
+		<simultaneous-build-throttle>10</simultaneous-build-throttle>
+		<!-- 最大可用连接数 -->
+		<prototype-count>5</prototype-count>
+		<!-- 监控时间 -->
+		<statistics>1m,15m,1d</statistics>
+	</proxool>
+</something-else-entirely>

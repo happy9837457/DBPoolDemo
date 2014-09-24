@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.2.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+         http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<!-- proxool连接池 -->
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver" value="${jdbc.driver}" />
+		<property name="driverUrl" value="${proxool.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="alias" value="${proxool.alias}" />
+		<!-- 检查线程休眠时间 -->
+		<property name="houseKeepingSleepTime" value="90000" />
+		<!-- 可用的连接数量 -->
+		<property name="prototypeCount" value="0" />
+		<!-- 数据库最大连接数 -->
+		<property name="maximumConnectionCount" value="50" />
+		<!-- 数据库最小连接数 -->
+		<property name="minimumConnectionCount" value="2" />
+		<!-- 等待队列长度 -->
+		<property name="simultaneousBuildThrottle" value="50" />
+		<!-- 一个线程的最大寿命 -->
+		<property name="maximumConnectionLifetime" value="14400000" />
+		<!-- 测试语句 -->
+		<property name="houseKeepingTestSql" value="select CURRENT_DATE" />
+	</bean>
+
+	<!-- 使用proxool.xml配置 -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/> 
+		<property name="url" value="proxool.lottery"/> </bean> -->
+</beans>
