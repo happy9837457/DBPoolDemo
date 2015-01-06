@@ -15,7 +15,7 @@
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">
-			<value>/spring/jdbc.properties</value>
+			<value>classpath:spring/jdbc.properties</value>
 		</property>
 		<property name="fileEncoding" value="UTF-8" />
 	</bean>
